@@ -142,11 +142,12 @@ class wpide
     
 
     public function hide_wp_sidebar_nav($classes) {
-        global $hook_suffix;
+	global $hook_suffix;
 
-		if ( apply_filters( 'wpide_sidebar_folded', $hook_suffix === $this->menu_hook ) ) {
-	    	return  str_replace("auto-fold", "", $classes) . ' folded';
-		}
+	if ( apply_filters( 'wpide_sidebar_folded', $hook_suffix === $this->menu_hook ) ) {
+		return str_replace("auto-fold", "", $classes) . ' folded';
+	}
+    	return $classes;
     }
     
     public function hide_wp_update_nag() {
